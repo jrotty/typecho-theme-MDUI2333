@@ -244,8 +244,7 @@ function themeInit($archive){
 		printarray(array('hidden'=>$archive->hidden));
 }
 function ThemeName(){
-	$db=Typecho_Db::get();$query=$db->select('value')->from('table.options')->where('name = ?','theme');
-	$result=$db->fetchAll($query);return $result[0]["value"];
+	return Helper::options()->theme;
 }
 function ThemePrimary(){
 	$primary=Helper::options()->themeprimary;
